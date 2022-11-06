@@ -138,3 +138,17 @@ td div {
   transform: rotate(90deg);
   box-shadow: 3px -3px #C77DAA;
 }
+=======
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+
