@@ -42,8 +42,8 @@ table {
 
 td {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #152C59;
   border-radius: 15px;
 }
@@ -53,8 +53,8 @@ td:hover {
 }
 
 td div {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 
 .numbers, .letters {
