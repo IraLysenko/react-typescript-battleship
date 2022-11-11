@@ -1,4 +1,5 @@
 import React from "react";
+import {Cell} from "./Cell"
 
 // export type GameState = {
 //     cells: Cells[];
@@ -36,7 +37,10 @@ export class Board extends React.Component {
                     <th className="letters">{letter}</th>
                     {this.columns.map((number, numberIndex) => {
                         return <td>
-                            <div id={letter + '-' + number}></div>
+                            <Cell
+                                coordinate={letter + '-' + number}
+                                key={numberIndex}
+                            />
                         </td>
                     })}
                 </tr>
