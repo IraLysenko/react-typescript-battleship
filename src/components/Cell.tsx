@@ -13,7 +13,6 @@ export function Cell(props:CellPrototype) {
             data-active={props.dataActive}
             className="cell"
         >
-        {props.dataActive ? (
             <span className="cell__icon">
                 {
                     props.dataCell === "ship"
@@ -23,7 +22,6 @@ export function Cell(props:CellPrototype) {
                     : null
                 }
             </span>
-        ) : null}
         </div>
     );
 }
