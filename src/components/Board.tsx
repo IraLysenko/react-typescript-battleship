@@ -17,7 +17,17 @@ export class Board extends React.Component {
     }
 
     columns = [1,2,3,4,5,6,7,8,9,10];
-    rows = ['A','B','C','D','E','F','G','H','I','G'];
+    rows = ['A','B','C','D','E','F','G','H','I','J'];
+    shipsCoordinates = {
+        submarine1: ['C-4'],
+        submarine2: ['I-2'],
+        destroyer1: ['B-2', 'C-2'],
+        destroyer2: ['E-4', 'E-5'],
+        cruiser: ['G-3', 'G-4', 'G-5'],
+        battleship: ['E-8', 'F-8', 'G-8', 'H-8'],
+        aircraft_carrier: ['B-10', 'C-10', 'D-10', 'E-10', 'F-10'],
+    }
+    allCoordinates = Object.values(this.shipsCoordinates).flat();
 
     renderTableHeader() {
         return(
@@ -36,12 +46,14 @@ export class Board extends React.Component {
                 <tr>
                     <th className="letters">{letter}</th>
                     {this.columns.map((number, numberIndex) => {
+                        const coordinate = letter + '-' + number;
                         return <td>
-                            <Cell
-                                coordinate={letter + '-' + number}
-                                key={numberIndex}
-                            />
-                        </td>
+                                    <Cell
+                                        coordinate={coordinate}
+                                        key={numberIndex}
+                                        dataShip={this.allCoordinates.includes(coordinate)}
+                                    />
+                                </td>
                     })}
                 </tr>
             )
