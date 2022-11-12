@@ -32,6 +32,7 @@ export class Board extends React.Component {
 
     userClick(event: React.MouseEvent<HTMLElement>): void {
         const element = event.target as HTMLElement;
+        element.classList.add('active');
         element.setAttribute('data-active', 'true');
     }
 

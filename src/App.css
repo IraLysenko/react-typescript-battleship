@@ -67,18 +67,27 @@ td div {
   cursor: pointer;
 }
 
-.cell[data-cell="ship"][data-active="true"] {
+.cell[data-cell="ship"].active {
   background-color: #9cf3e1;
 }
 
-.cell[data-cell="ship"][data-active="true"] .cell__icon {
+.cell__icon {
+  display: none;
+}
+
+.cell.active .cell__icon {
+  display: flex;
+}
+
+.cell[data-cell="ship"].active .cell__icon {
   background-color: #9cf3e1;
   font-size: 28px;
   font-weight: 300;
 }
 
-.cell[data-cell="miss"][data-active="true"] {
+.cell[data-cell="miss"].active {
   background-color: #493d73;
   font-size: 10px;
 }
+
 
