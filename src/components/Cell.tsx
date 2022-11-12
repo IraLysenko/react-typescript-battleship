@@ -1,14 +1,16 @@
 import React from "react";
-
-export type CellPrototype = {
-    coordinate: string;
-    //onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
-}
+import { CellPrototype } from "../Types";
 
 export function Cell(props:CellPrototype) {
     const cellCoordinate = props.coordinate;
+    const dataShip = props.dataShip;
 
     return (
-        <div id={cellCoordinate}></div>
+        <div
+            id={cellCoordinate}
+            data-ship={dataShip}
+            className="cell"
+        >
+        </div>
     );
 }
