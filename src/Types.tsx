@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum ShipsTypes {
     SUBMARINE=1,
     DESTROYER=2,
@@ -16,7 +18,16 @@ export enum ShipsAmount {
 
 export type CellPrototype = {
     coordinate: string;
-    dataShip: boolean;
-    dataMiss: boolean;
-    //onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+    dataCell: CellType;
+    onClick: (event: React.MouseEvent<HTMLElement>) => void
+}
+
+export interface IProps {}
+
+export type CellType = 'ship' | 'miss';
+
+export type GameState = {
+    gameStart: boolean;
+    gameOver: boolean;
+    userScore: number;
 }

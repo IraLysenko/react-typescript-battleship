@@ -8,15 +8,15 @@ export function Cell(props:CellPrototype) {
     return (
         <div
             id={props.coordinate}
-            data-ship={props.dataShip}
-            data-miss={props.dataMiss}
+            data-cell={props.dataCell}
+            onClick={props.onClick}
             className="cell"
         >
-            {props.dataShip ? (
+            {(props.dataCell === "ship") ? (
                 <span className="cell__icon"><FontAwesomeIcon icon={faXmark} /></span>
-            ) : (
+            ) : (props.dataCell === "miss" ) ? (
                 <span className="cell__icon"><FontAwesomeIcon icon={faCircle} /></span>
-            )}
+            ) : null }
         </div>
     );
 }
