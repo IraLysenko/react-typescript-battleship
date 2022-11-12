@@ -10,13 +10,20 @@ export function Cell(props:CellPrototype) {
             id={props.coordinate}
             data-cell={props.dataCell}
             onClick={props.onClick}
+            data-active={props.dataActive}
             className="cell"
         >
-            {(props.dataCell === "ship") ? (
-                <span className="cell__icon"><FontAwesomeIcon icon={faXmark} /></span>
-            ) : (props.dataCell === "miss" ) ? (
-                <span className="cell__icon"><FontAwesomeIcon icon={faCircle} /></span>
-            ) : null }
+        {props.dataActive ? (
+            <span className="cell__icon">
+                {
+                    props.dataCell === "ship"
+                    ? (<FontAwesomeIcon icon={faXmark} />)
+                    : props.dataCell === "miss"
+                    ? (<FontAwesomeIcon icon={faCircle} />)
+                    : null
+                }
+            </span>
+        ) : null}
         </div>
     );
 }

@@ -2,15 +2,15 @@ import React from "react";
 import {Cell} from "./Cell";
 import type {CellType, GameState} from "../Types";
 
-
-
 export class Board extends React.Component {
-    constructor(props: any) {
+    constructor(props: GameState) {
         super(props);
 
-        // this.state = {
-        //     shot:
-        // }
+        this.state = {
+            gameStart: false,
+            gameOver: false,
+            userScore: 0
+        }
     }
 
     columns = [1,2,3,4,5,6,7,8,9,10];
@@ -26,13 +26,13 @@ export class Board extends React.Component {
     }
     allCoordinates = Object.values(this.shipsCoordinates).flat();
 
-    userClick(state: GameState, event: any) {
-        console.log(event.coordinate);
-
-    }
-
     defineCellType(coordinate: string) : CellType {
         return this.allCoordinates.includes(coordinate) ? 'ship' : 'miss';
+    }
+
+    userClick(event: React.MouseEvent<HTMLElement>): void {
+        const element = event.target as HTMLElement;
+        element.setAttribute('data-active', 'true');
     }
 
     renderTableHeader() {
@@ -58,9 +58,8 @@ export class Board extends React.Component {
                                         coordinate={coordinate}
                                         key={coordinate}
                                         dataCell={this.defineCellType(coordinate)}
-                                        onClick={(event) => {
-                                            this.userClick(this.state as GameState, event);
-                                            }
+                                        dataActive={false}
+                                        onClick={(event: React.MouseEvent<HTMLElement>) => {this.userClick(event);}
                                         }
                                     />
                                 </td>
