@@ -49,11 +49,11 @@ export class Board extends React.Component {
     renderTableData() {
         return this.rows.map((letter, letterIndex) => {
             return (
-                <tr>
+                <tr key={letter+'-'+letterIndex}>
                     <th className="letters">{letter}</th>
                     {this.columns.map((number, numberIndex) => {
                         const coordinate = letter + '-' + number;
-                        return <td>
+                        return <td key={coordinate}>
                                     <Cell
                                         coordinate={coordinate}
                                         key={coordinate}
@@ -74,8 +74,12 @@ export class Board extends React.Component {
         return (
             <div id="board">
                 <table>
-                    {this.renderTableHeader()}
-                    {this.renderTableData()}
+                    <thead>
+                        {this.renderTableHeader()}
+                    </thead>
+                    <tbody>
+                        {this.renderTableData()}
+                    </tbody>
                 </table>
             </div>
         )
