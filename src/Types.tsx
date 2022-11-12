@@ -17,5 +17,6 @@ export enum ShipsAmount {
 export type CellPrototype = {
     coordinate: string;
     dataShip: boolean;
+    dataMiss: boolean;
     //onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }

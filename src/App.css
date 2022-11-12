@@ -142,7 +142,21 @@ td div {
   box-shadow: 3px -3px #C77DAA;
 }
 
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cell[data-ship="true"] {
   background-color: #9cf3e1;
+}
+
+.cell[data-miss="true"] {
+  background-color: #493d73;
+}
+
+.cell[data-miss="true"] .cell__icon {
+  font-size: 12px;
 }
 
