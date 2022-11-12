@@ -52,6 +52,7 @@ export class Board extends React.Component {
                                         coordinate={coordinate}
                                         key={numberIndex}
                                         dataShip={this.allCoordinates.includes(coordinate)}
+                                        dataMiss={!this.allCoordinates.includes(coordinate)}
                                     />
                                 </td>
                     })}
