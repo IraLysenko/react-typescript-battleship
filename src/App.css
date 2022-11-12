@@ -26,7 +26,6 @@ body {
 #board {
   position: relative;
   width: 100%;
-
 }
 
 table {
@@ -68,16 +67,17 @@ td div {
   cursor: pointer;
 }
 
-.cell[data-cell="ship"] {
+.cell[data-cell="ship"][data-active="true"] {
   background-color: #9cf3e1;
 }
 
-.cell[data-cell="ship"] .cell__icon {
+.cell[data-cell="ship"][data-active="true"] .cell__icon {
   background-color: #9cf3e1;
-  font-size: 18px;
+  font-size: 28px;
+  font-weight: 300;
 }
 
-.cell[data-cell="miss"] {
+.cell[data-cell="miss"][data-active="true"] {
   background-color: #493d73;
   font-size: 10px;
 }
