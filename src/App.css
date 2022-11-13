@@ -11,6 +11,9 @@ body {
 }
 
 .title {
+  color: white;
+}
+.title--header {
   text-align: center;
   color: white;
 }
@@ -23,6 +26,22 @@ body {
   padding: 20px;
 }
 
+.game {
+  display: flex;
+}
+
+.game__board, .game__info {
+  width: 50%;
+}
+
+.game__info {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 3px;
@@ -30,7 +49,6 @@ table {
 }
 
 td {
-  position: relative;
   width: 40px;
   height: 40px;
   border: 2px solid #152C59;
