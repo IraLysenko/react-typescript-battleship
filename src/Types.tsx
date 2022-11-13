@@ -30,5 +30,6 @@ export type CellType = 'ship' | 'miss';
 export type GameState = {
     gameStart: boolean;
     gameOver: boolean;
+    gameWin: boolean;
     userScore: number;
 }
