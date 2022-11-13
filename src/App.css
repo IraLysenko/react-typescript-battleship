@@ -23,11 +23,6 @@ body {
   padding: 20px;
 }
 
-#board {
-  position: relative;
-  width: 100%;
-}
-
 table {
   border-collapse: separate;
   border-spacing: 3px;
