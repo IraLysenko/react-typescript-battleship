@@ -86,36 +86,62 @@ export class Game extends React.Component {
 
     render() {
         return (
-            <div className="game">
-                <div id="board" className="game__board board">
-                    <table>
-                        <thead>
-                        {this.renderTableHeader()}
-                        </thead>
-                        <tbody>
-                        {this.renderTableData()}
-                        </tbody>
-                    </table>
-                </div>
-                <div className="game__info">
-                    <div className="game__ships">
-                        <h2 className="title title--info">Your ships</h2>
-                        <div className="fleet">
-                            <div className="fleet__item ship-info">
-                                <span className="ship-info__name">Carrier | </span>
-                                <span className="ship-info__size">size: 5 | </span>
-                                <span className="ship-info__amount">amount: 1</span>
+            <div className="container">
+                <div className="game">
+                    <div id="board" className="game__board board">
+                        <table>
+                            <thead>
+                            {this.renderTableHeader()}
+                            </thead>
+                            <tbody>
+                            {this.renderTableData()}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="game__info">
+                        <div className="game__ships">
+                            <h2 className="title title--info">Enemy ships</h2>
+                            <div className="fleet">
+                                <div className="fleet__item ship-info">
+                                    <span className="ship-info__name">Carrier | </span>
+                                    <span className="ship-info__size">size: 5 | </span>
+                                    <span className="ship-info__amount">amount: 1</span>
+                                </div>
+
+                                <div className="fleet__item ship-info">
+                                    <span className="ship-info__name">Battleship | </span>
+                                    <span className="ship-info__size">size: 4 | </span>
+                                    <span className="ship-info__amount">amount: 1</span>
+                                </div>
+
+                                <div className="fleet__item ship-info">
+                                    <span className="ship-info__name">Cruiser | </span>
+                                    <span className="ship-info__size">size: 3 | </span>
+                                    <span className="ship-info__amount">amount: 1</span>
+                                </div>
+
+                                <div className="fleet__item ship-info">
+                                    <span className="ship-info__name">Submarine | </span>
+                                    <span className="ship-info__size">size: 2 | </span>
+                                    <span className="ship-info__amount">amount: 2</span>
+                                </div>
+
+                                <div className="fleet__item ship-info">
+                                    <span className="ship-info__name">Destroyer | </span>
+                                    <span className="ship-info__size">size: 1 | </span>
+                                    <span className="ship-info__amount">amount: 2</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="game__message"></div>
-                    <div className="game__button">
-                        <StartButton onClick={(event) => {
-                            this.startGame(this.state as GameState);
-                        }}/>
+                        <div className="game__message"></div>
+                        <div className="game__button">
+                            <StartButton onClick={(event) => {
+                                this.startGame(this.state as GameState);
+                            }}/>
+                        </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         )
     }
 }
