@@ -10,6 +10,11 @@ body {
   background: #84b2b8;
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .title {
   color: white;
 }
@@ -18,8 +23,37 @@ body {
   color: white;
 }
 
+.title--info {
+  margin-bottom: 30px;
+}
+
 .title--header span {
   margin-right: 15px;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #493d73;
+  color: white;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #493d73;
+  transition: color 0.2s linear;
+  border: 1px solid #493d73;
+}
+
+.button:active {
+  border: 2px solid #493d73;
+}
+
+.ship-info__name {
+  font-weight: bold;
+  color: #152C59;
 }
 
 .header{
@@ -36,10 +70,23 @@ body {
 
 .game__info {
   padding-top: 40px;
+  padding-left: 60px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+}
+
+.fleet {
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.fleet__item {
+  padding: 3px 0;
+}
+
+.game__ships {
+  margin-bottom: 30px;
 }
 
 table {
