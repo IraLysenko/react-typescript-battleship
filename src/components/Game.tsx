@@ -1,16 +1,17 @@
 import React from "react";
 import {Cell} from "./Cell";
-import type {CellType, GameState} from "../Types";
+import type {CellType, GameState, IProps} from "../Types";
 import {StartButton} from "./StartButton";
 import {GameShipsInfo} from "./GameShipsInfo";
 
-export class Game extends React.Component {
+export class Game extends React.Component<IProps, GameState> {
     constructor(props: GameState) {
         super(props);
 
         this.state = {
             gameStart: false,
             gameWin: false,
+            shot: 'none',
             gameOver: false,
             userScore: 0
         }
@@ -30,16 +31,7 @@ export class Game extends React.Component {
     allCoordinates = Object.values(this.shipsCoordinates).flat();
 
     startGame(state: GameState) {
-        if(state.gameOver) {
-            state.userScore = 0
-        }
-
-        this.setState({
-            gameOver: false
-        }, () => {
-            const state = this.state as GameState;
-        });
-
+        //generating Game and new board is in process
     }
 
     defineCellType(coordinate: string) : CellType {
@@ -48,8 +40,13 @@ export class Game extends React.Component {
 
     userClick(event: React.MouseEvent<HTMLElement>): void {
         const element = event.target as HTMLElement;
+        const data = element.getAttribute('data-cell');
+
         element.classList.add('active');
         element.setAttribute('data-active', 'true');
+
+        if(data === 'ship') this.setState({shot: 'hit'})
+        if(data === 'miss') this.setState({shot: 'miss'})
     }
 
     renderTableHeader() {
@@ -102,7 +99,14 @@ export class Game extends React.Component {
                     </div>
                     <div className="game__info">
                         <GameShipsInfo/>
-                        <div className="game__message"></div>
+                        <div className="game__message">{
+                            (this.state.shot === 'hit') ? (
+                                <div>Good shot!!!</div>
+                            ) : (this.state.shot === 'miss') ? (
+                                <div>Miss! Try again!</div>
+                            ) : <div>Let's start shooting!</div>
+                        }</div>
+
                         <div className="game__button">
                             <StartButton onClick={(event) => {
                                 this.startGame(this.state as GameState);

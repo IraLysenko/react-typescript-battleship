@@ -10,7 +10,7 @@ export function StartButton(props: StartGamesPropTypes) {
             onClick={props.onClick}
             type="button"
             className="button button--start">
-            Start game
+            New game
         </button>
     );
 }
