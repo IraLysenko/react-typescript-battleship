@@ -28,6 +28,7 @@ export class Game extends React.Component<IProps, GameState> {
         battleship: ['E-8', 'F-8', 'G-8', 'H-8'],
         aircraft_carrier: ['B-10', 'C-10', 'D-10', 'E-10', 'F-10'],
     }
+
     allCoordinates = Object.values(this.shipsCoordinates).flat();
 
     startGame(state: GameState) {
