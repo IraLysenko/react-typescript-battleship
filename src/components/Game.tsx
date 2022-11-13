@@ -1,8 +1,9 @@
 import React from "react";
 import {Cell} from "./Cell";
 import type {CellType, GameState} from "../Types";
+import {StartButton} from "./StartButton";
 
-export class Board extends React.Component {
+export class Game extends React.Component {
     constructor(props: GameState) {
         super(props);
 
@@ -25,6 +26,20 @@ export class Board extends React.Component {
         aircraft_carrier: ['B-10', 'C-10', 'D-10', 'E-10', 'F-10'],
     }
     allCoordinates = Object.values(this.shipsCoordinates).flat();
+
+    startGame(state: GameState) {
+        if(state.gameOver) {
+            state.userScore = 0
+        }
+
+        this.setState({
+            gameOver: false
+        }, () => {
+            const state = this.state as GameState;
+
+        });
+
+    }
 
     defineCellType(coordinate: string) : CellType {
         return this.allCoordinates.includes(coordinate) ? 'ship' : 'miss';
@@ -72,16 +87,27 @@ export class Board extends React.Component {
 
     render() {
         return (
-            <div id="board">
-                <table>
-                    <thead>
+            <div className="game">
+                <div id="board" className="game__board board">
+                    <table>
+                        <thead>
                         {this.renderTableHeader()}
-                    </thead>
-                    <tbody>
+                        </thead>
+                        <tbody>
                         {this.renderTableData()}
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="game__info">
+                    <div className="game__ships"></div>
+                    <div className="game__message"></div>
+                    <div className="game__button">
+                        <StartButton onClick={(event) => {
+                            this.startGame(this.state as GameState);
+                        }}/>
+                    </div>
+                </div>
+            </div>            
         )
     }
 }
