@@ -33,7 +33,7 @@ body {
 
 .button {
   padding: 10px 15px;
-  border: none;
+  border: 1px solid #493d73;
   cursor: pointer;
   background-color: #493d73;
   color: white;
@@ -44,7 +44,6 @@ body {
   background-color: #fff;
   color: #493d73;
   transition: color 0.2s linear;
-  border: 1px solid #493d73;
 }
 
 .button:active {
@@ -74,11 +73,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
+}
+
+.game__message {
+  border: 2px dashed white;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
 }
 
 .fleet {
   padding: 20px;
-  border: 1px solid white;
+  border: 1px solid #152C59;
 }
 
 .fleet__item {

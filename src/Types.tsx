@@ -26,10 +26,12 @@ export type CellPrototype = {
 export interface IProps {}
 
 export type CellType = 'ship' | 'miss';
+export type Shot = 'none' | 'hit' | 'miss'
 
 export type GameState = {
     gameStart: boolean;
     gameOver: boolean;
     gameWin: boolean;
+    shot: Shot;
     userScore: number;
 }
