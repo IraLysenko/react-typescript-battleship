@@ -36,7 +36,6 @@ export class Game extends React.Component {
             gameOver: false
         }, () => {
             const state = this.state as GameState;
-
         });
 
     }
@@ -99,7 +98,16 @@ export class Game extends React.Component {
                     </table>
                 </div>
                 <div className="game__info">
-                    <div className="game__ships"></div>
+                    <div className="game__ships">
+                        <h2 className="title title--info">Your ships</h2>
+                        <div className="fleet">
+                            <div className="fleet__item ship-info">
+                                <span className="ship-info__name">Carrier | </span>
+                                <span className="ship-info__size">size: 5 | </span>
+                                <span className="ship-info__amount">amount: 1</span>
+                            </div>
+                        </div>
+                    </div>
                     <div className="game__message"></div>
                     <div className="game__button">
                         <StartButton onClick={(event) => {
